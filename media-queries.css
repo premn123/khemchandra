@@ -1,0 +1,409 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem; /* Default font size */
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    position: relative;
+    background: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.75rem; /* 60px in rem */
+    background: #c5d0de;
+    display: flex;
+    align-items: center;
+    padding: 0 2.5vw;
+}
+
+.logo {
+    height: 2.5rem; /* 40px in rem */
+    margin-left: 1.25rem; /* 20px in rem */
+}
+
+/* Toggle Button */
+.toggle-btn {
+    width: 1.25rem; /* 20px in rem */
+    height: 0.625rem; /* 10px in rem */
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-btn span {
+    position: absolute;
+    width: 100%;
+    height: 0.125rem; /* 2px in rem */
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111010;
+}
+
+.toggle-btn span:nth-child(1) {
+    top: 0;
+}
+
+.toggle-btn span:nth-child(3) {
+    top: 100%;
+}
+
+/* Dropdown Styles */
+.dropdown-btn {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem; /* 16px in rem */
+    padding: 0.625rem 0.9375rem; /* 10px 15px in rem */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 10rem; /* 160px in rem */
+    box-shadow: 0px 0.5rem 1rem 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 0.75rem 1rem; /* 12px 16px in rem */
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search Bar */
+.search-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box {
+    position: relative;
+    max-width: 31.25rem; /* 500px in rem */
+    width: 50%; /* Adjusted width for mobile */
+    height: 2.5rem; /* 40px in rem */
+    display: flex;
+}
+
+.search-bar {
+    width: 85%;
+    height: 100%;
+    border: 0.125rem solid #dbdbdb; /* 2px in rem */
+    padding: 0 1.25rem; /* 20px in rem */
+    font-size: 1rem; /* 16px in rem */
+    text-transform: capitalize;
+}
+
+.search-btn {
+    width: 15%;
+    height: 100%;
+    background: #f0f0f0;
+    border: 0.125rem solid #dbdbdb; /* 2px in rem */
+    padding: 0.3125rem 0; /* 5px in rem */
+    border-left: none;
+}
+
+.search-btn img {
+    height: 100%;
+}
+
+/* User Options */
+.user-options {
+    height: 2.1875rem; /* 35px in rem */
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.user-options .icon {
+    height: 1.25rem; /* 20px in rem */
+    margin-right: 1.25rem; /* 20px in rem */
+    cursor: pointer;
+}
+
+.user-dp {
+    cursor: pointer;
+    height: 1.875rem; /* 30px in rem */
+    width: 1.875rem; /* 30px in rem */
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-dp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Filters */
+.filters {
+    position: fixed;
+    left: 15.625rem; /* 250px in rem */
+    top: 3.75rem; /* 60px in rem */
+    width: calc(100% - 15.625rem); /* Responsive width calculation */
+    height: 3.75rem; /* 60px in rem */
+    background: #fff;
+    border-top: 0.125rem solid #dbdbdb; /* 2px in rem */
+    border-bottom: 0.125rem solid #dbdbdb; /* 2px in rem */
+    padding: 0 1.25rem; /* 20px in rem */
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.filters::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+.filter-options {
+    flex: 0 0 auto;
+    padding: 0.625rem 0.9375rem; /* 10px 15px in rem */
+    border-radius: 3.125rem; /* 50px in rem */
+    background: #f0f0f0;
+    border: 0.0625rem solid #dbdbdb; /* 1px in rem */
+    text-transform: capitalize;
+    margin-right: 0; /* 10px in rem */
+    color: #242424;
+    font-size: 0.9375rem; /* 15px in rem */
+    cursor: pointer;
+}
+
+.filter-options.active {
+    color: #fff;
+    background: #242424;
+}
+
+/* Video Container */
+.video-container {
+    width: calc(100% - 15.625rem); /* Responsive width calculation */
+    margin-top: 7.5rem; /* 120px in rem */
+    padding: 1.25rem; /* 20px in rem */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6.25rem, 1fr)); /* Responsive grid */
+    grid-gap: 0.625rem; /* 10px in rem */
+    overflow-x: hidden;
+}
+
+.video {
+    min-height: 12.5rem; /* 200px in rem */
+    height: auto;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 9.375rem; /* 150px in rem */
+    object-fit: cover;
+}
+
+.content {
+    width: 100%;
+    padding: 0.3125rem; /* 5px in rem */
+    display: flex;
+    flex-direction: column; /* Stack content vertically for mobile */
+    justify-content: center; /* Center content vertically for mobile */
+}
+
+.channel-icon {
+    width: 1.875rem; /* 30px in rem */
+    height: 1.875rem; /* 30px in rem */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.3125rem; /* 5px in rem */
+}
+
+.title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent title from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis to long titles */
+}
+
+.channel-name {
+    font-size: 0.75rem; /* 12px in rem */
+    margin: 0.125rem 0; /* 2px 0 in rem */
+    color: #979797;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 60rem) {
+    .navbar {
+        height: 3.125rem; /* 50px in rem */
+    }
+
+    .logo {
+        height: 1.875rem; /* 30px in rem */
+        margin-left: 0.625rem; /* 10px in rem */
+    }
+
+    .search-bar {
+        font-size: 0.875rem; /* 14px in rem */
+    }
+    /* Add more responsive adjustments as needed */
+}
+
+@media (max-width: 37.5rem) {
+    .navbar {
+        height: 2.5rem; /* 40px in rem */
+    }
+
+    .logo {
+        height: 1.25rem; /* 20px in rem */
+        margin-left: 0.3125rem; /* 5px in rem */
+    }
+
+    .search-box {
+        max-width: 28.125rem; /* 450px in rem */
+        width: 60%; /* Adjusted width for smaller screens */
+    }
+    /* Add more responsive adjustments as needed */
+}
+
+@media (max-width: 30rem) {
+    .navbar {
+        height: 4.1875rem; /* 35px in rem */
+    }
+
+    .logo {
+        height: 1rem; /* 16px in rem */
+        margin-left: 0.15625rem; /* 2.5px in rem */
+    }
+
+    .user-options {
+        display: none;
+    }
+       /* Shift the search box and search button to the right */
+       .search-center {
+        justify-content: flex-end;
+    }
+
+    .search-box {
+        width: auto; /* Allow the search box to expand */
+        margin-right: 1.25rem; /* Add some spacing on the right */
+    }
+
+    .search-bar {
+        width: 100%; /* Use the full available width */
+    }
+
+    .search-btn {
+        border-left: 0.125rem solid #dbdbdb; /* Restore the left border */
+    }
+
+    /* Make videos full-screen */
+    .video-container {
+        width: 100%; /* Use the full width of the screen */
+        margin-top: 0.8rem; /* Remove top margin */
+        padding: 0.8rem; /* Remove padding */
+        grid-template-columns: 1fr; /* Display a single column */
+        grid-gap: 1rem; /* Remove grid gap */
+    }
+
+    .video {
+        height: auto; /* Allow videos to resize to the screen width */
+        max-width: 100%; /* Ensure videos don't overflow the screen */
+        min-height: auto; /* Allow videos to adjust height */
+    }
+      /* Hide the filters in mobile view */
+      .filters {
+        display: none;
+    }
+      /* ... (previous mobile view styles) ... */
+
+    
+/* Styles for the Recent Videos heading */
+.recent-videos {
+    background-color: #f0f0f0; /* Black background color */
+    color: #000000; /* White text color */
+    padding: 1rem; /* Add padding to create a black box */
+    text-align: left; /* Center-align the text */
+margin-top: 5rem;
+}
+
+.recent-videos h2 {
+    margin: 0; /* Remove default margin for h2 */
+    border-bottom: 2px solid #000000; /* White underline */
+}
+    
+   /* Reset styles for channel info */
+   .info {
+    display: block;
+    margin-top: 0.5rem; /* Adjust the margin for spacing */
+}
+
+/* Channel Icon */
+.channel-icon {
+    width: 1rem; /* 30px in rem */
+    height: 1rem; /* 30px in rem */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.3125rem; /* 5px in rem */
+    float: left; /* Float the icon to the left */
+}
+
+/* Title */
+.title {
+    overflow: auto;
+    white-space: nowrap; /* Prevent title from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis to long titles */
+    margin: 0; /* Reset margin to remove any default margin */
+}
+
+/* Channel Name */
+.channel-name {
+    font-size: 1rem; /* 12px in rem */
+    margin: 0.125rem 0; /* 2px 0 in rem */
+    color: #979797;
+    clear: both; /* Clear any floats to move below the icon and title */
+}
+.logo {
+    height: 2.5rem; /* Adjust the desired height */
+    margin: 6rem; /* Center-align the logo horizontally */
+    display: block; /* Make sure it's a block-level element for centering */
+}
+
+.search-box {
+    display: none;
+} 
+/* Toggle Button */
+.toggle-btn {
+    width: 1.5rem; /* 20px in rem */
+    height: 1rem; /* 10px in rem */
+    position: relative;
+    cursor: pointer;
+}
+.toggle-btn span {
+    position: absolute;
+    width: 100%;
+    height: 0.25rem; /* 2px in rem */
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111010;
+}
+    /* Show the user dp in mobile view */
+    .user-dp {
+        display:block ; /* Show the user dp */
+    }
+}
